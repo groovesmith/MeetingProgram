@@ -13,6 +13,10 @@ namespace MeetingProgram.Models.ProjectModel
             ProjectName = projectName;
             ProjectLocation = projectLocation;
         }
+        public Project()
+        {
+
+        }
 
         public int ProjectID { get; set; }
         public string ProjectName { get; set; }
