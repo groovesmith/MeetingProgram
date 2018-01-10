@@ -9,14 +9,6 @@ namespace MeetingProgram.Controllers
     {
         public ActionResult Index()
         {
-            MeetingDbContext context = new MeetingDbContext();
-
-            Meeting meeting = context.Meetings.SingleOrDefault(x => x.IsDraft == false);
-
-            meeting.AddTopictoAgenda("Test");
-
-            context.SaveChanges();
-
             return View();
         }
 
