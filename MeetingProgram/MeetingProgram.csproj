@@ -136,6 +136,7 @@
     <Compile Include="Models\MeetingModel\Interfaces\IMeeting.cs" />
     <Compile Include="Models\MeetingModel\Meeting.cs" />
     <Compile Include="Models\MeetingModel\Topic.cs" />
+    <Compile Include="Models\MeetingDbContext.cs" />
     <Compile Include="Models\PersonModel\Admin.cs" />
     <Compile Include="Models\PersonModel\Customer.cs" />
     <Compile Include="Models\PersonModel\Exceptions\InvalidEmailException.cs" />

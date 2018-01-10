@@ -8,6 +8,10 @@ namespace MeetingProgram.Models.MeetingModel
 {
     public class Topic
     {
+        public Topic()
+        {
+            
+        }
         // singel topic and mulit topics 
         public Topic(string subject)
         {
@@ -20,9 +24,9 @@ namespace MeetingProgram.Models.MeetingModel
             SupTopics = supTopics;
         }
     
-
+        public int TopicID { get; set; }
         public string Subject { get; set; }
-        public List<Topic> SupTopics = new List<Topic>();
+        public List<Topic> SupTopics { get; set; } = new List<Topic>();
 
         public void AddSubTopictoSubject(Topic topic)
         {

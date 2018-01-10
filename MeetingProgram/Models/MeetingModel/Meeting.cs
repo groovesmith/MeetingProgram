@@ -10,14 +10,13 @@ namespace MeetingProgram.Models.MeetingModel
 {
     public class Meeting : Interfaces.IMeeting
     {
-        public Meeting(int meetingID, Agenda meetingAgenda, DateTime date, string description, bool isDraft, List<Meeting> partialMeeting, List<Person> atendees)
+        public Meeting(int meetingID, Agenda meetingAgenda, DateTime date, string description, bool isDraft, List<Person> atendees)
         {
             meetingID = MeetingID;
-            MeetingAgenda = meetingAgenda;
+            Agenda = meetingAgenda;
             Date = date;
             Description = description;
             IsDraft = isDraft;
-            PartialMeeting = partialMeeting;
             Atendees = atendees;
         }
         public Meeting()
@@ -26,17 +25,16 @@ namespace MeetingProgram.Models.MeetingModel
         }
         [Key]
         public int MeetingID { get; set; }
-        public Agenda MeetingAgenda { get; set; }
+        public virtual Agenda Agenda { get; set; }
         [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime Date { get; set;  }
         public string Description { get; set; }
         public bool IsDraft { get; set; }
-        public List<Meeting> PartialMeeting = new List<Meeting>();
         public List<Person> Atendees = new List<Person>();
 
         public void AddTopictoAgenda(string topic)
         {
-            MeetingAgenda.AddTopic(new Topic(topic));
+            Agenda.AddTopic(new Topic(topic));
         }
 
         public void RemoveTopictoAgenda(Topic topic)

@@ -10,25 +10,20 @@ namespace MeetingProgram.Models.MeetingModel
     public class Agenda
     {
         // singel topic and mulit topics 
-        public Agenda(List<Topic> agendaList)
+        public Agenda(List<Topic> topics)
         {
-            AgendaList = agendaList;
+            Topics = topics;
         }
 
         [Key]
         [HiddenInput(DisplayValue = false)]
         public int AgendaID { get; set; }
-        public List<Topic> AgendaList = new List<Topic>();
+        public List<Topic> Topics { get; set; } = new List<Topic>();
 
         public void AddTopic(Topic topic)
-        {
-            AgendaList.Add(topic);
-        }
+            => Topics.Add(topic);
 
         public void RemoveTopic(Topic topic)
-        {
-            //AgendaList.Remove(Topic topic);
-            throw new NotImplementedException();
-        }
+            => Topics.Remove(topic);
     }
 }
