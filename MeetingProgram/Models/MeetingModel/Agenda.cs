@@ -14,7 +14,10 @@ namespace MeetingProgram.Models.MeetingModel
         {
             Topics = topics;
         }
+        public Agenda()
+        {
 
+        }
         [Key]
         [HiddenInput(DisplayValue = false)]
         public int AgendaID { get; set; }

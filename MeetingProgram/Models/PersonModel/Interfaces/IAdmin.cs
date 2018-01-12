@@ -10,8 +10,7 @@ namespace MeetingProgram.Models.PersonModel.Interfaces
     {
         void AddUser(User user);
         void PromoteUser(User user);
-        void DemoteAdmin(Admin admin);
-        
+        void DemoteAdmin(Admin admin);        
 
     }
 }

@@ -1,4 +1,5 @@
-﻿@model MeetingProgram.Models.MeetingModel.Meeting
+﻿@using System.Web.Optimization
+@model MeetingProgram.Models.MeetingModel.Meeting
 
 @{
     ViewBag.Title = "Edit";
@@ -10,7 +11,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Meeting</h4>
         <hr />
@@ -55,6 +56,6 @@
     @Html.ActionLink("Back to List", "Index")
 </div>
 
-@section Scripts {
+@section ViewSpecificJavascript {
     @Scripts.Render("~/bundles/jqueryval")
 }

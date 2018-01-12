@@ -117,6 +117,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\site.css" />
+    <Content Include="Content\site.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
     <Content Include="Views\Meetings\Create.cshtml" />
@@ -124,6 +126,11 @@
     <Content Include="Views\Meetings\Details.cshtml" />
     <Content Include="Views\Meetings\Edit.cshtml" />
     <Content Include="Views\Meetings\Index.cshtml" />
+    <Content Include="Views\Agenda\Create.cshtml" />
+    <Content Include="Views\Agenda\Delete.cshtml" />
+    <Content Include="Views\Agenda\Details.cshtml" />
+    <Content Include="Views\Agenda\Edit.cshtml" />
+    <Content Include="Views\Agenda\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -132,6 +139,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AgendaController.cs" />
     <Compile Include="Controllers\MeetingsController.cs" />
     <Compile Include="Models\AttachmentModel\Attachment.cs" />
     <Compile Include="Models\AttachmentModel\Comment.cs" />
@@ -162,8 +170,6 @@
     <Content Include="Content\css\AdminLTE.css" />
     <Content Include="Content\css\AdminLTE.min.css" />
     <Content Include="Content\css\bootstrap-datepicker3.min.css" />
-    <Content Include="Content\css\bootstrap-select.css" />
-    <Content Include="Content\css\bootstrap-select.min.css" />
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\font-awesome.min.css" />
     <Content Include="Content\css\icheck\aero.css" />
