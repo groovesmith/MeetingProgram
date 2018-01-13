@@ -10,35 +10,40 @@ namespace MeetingProgram.Models.MeetingModel
     {
         public Topic()
         {
-            
+           // SupTopics = new List<SupTopic>();
         }
+
+
+
+
         // singel topic and mulit topics 
         public Topic(string subject)
         {
             Subject = subject;
+           // SupTopics = new List<SupTopic>();
 
-        }
-        public Topic(string subject, List<Topic> supTopics) 
-        {
-            Subject = subject;
-            SupTopics = supTopics;
         }
     
         public int TopicID { get; set; }
         public string Subject { get; set; }
-        public List<Topic> SupTopics { get; set; } = new List<Topic>();
+        public string Index { get; set; }
+       // public List<SupTopic> SupTopics { get; set; }
 
-        public void AddSubTopictoSubject(Topic topic)
-        {
-            SupTopics.Add(topic);
-        }
+        //public void AddSubTopictoSubject(Topic topic)
+        //{
+        //    SupTopics.Add(topic);
+        //}
 
-        public void RemoveSubTopictoSubject(Topic topic)
-        {
-            //SupTopics.Remove(topic);
-            throw new NotImplementedException();
-        }
+        //public void RemoveSubTopictoSubject(Topic topic)
+        //{
+        //    SupTopics.Remove(topic);
+           
+        //}
 
 
     }
+
+    
+
+
 }

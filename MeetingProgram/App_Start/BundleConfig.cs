@@ -29,7 +29,8 @@ namespace MeetingProgram.App_Start
                 .Include("~/Content/js/plugins/validator.js")
                 .Include("~/Content/js/plugins/inputmask/jquery.inputmask.bundle.js")
                 .Include("~/Content/js/adminlte.js")
-                .Include("~/Content/js/init.js"));
+                .Include("~/Content/js/init.js")
+                .Include("~/Content/js/site.js"));
 
 #if DEBUG
             BundleTable.EnableOptimizations = false;

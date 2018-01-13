@@ -44,7 +44,7 @@ namespace MeetingProgram.Controllers
 
         // POST: Meetings/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "MeetingID,Date,Description,IsDraft")] Meeting meeting)
@@ -76,10 +76,10 @@ namespace MeetingProgram.Controllers
 
         // POST: Meetings/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MeetingID,Date,Description,IsDraft")] Meeting meeting)
+        public ActionResult Edit([Bind(Include = "MeetingID,Date,Description,Agenda,IsDraft")] Meeting meeting)
         {
             if (ModelState.IsValid)
             {
@@ -124,5 +124,18 @@ namespace MeetingProgram.Controllers
             }
             base.Dispose(disposing);
         }
+        //public ActionResult ViewCreateAgenda()
+        //{
+        //    return PartialView("_AgendaCreate");
+        //}
+
+        //[HttpPost]
+        //public ActionResult CreateAgenda()
+        //{
+        //    return RedirectToAction("Create");
+        //}
+
+
+
     }
 }

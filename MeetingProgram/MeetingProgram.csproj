@@ -117,8 +117,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\site.css" />
-    <Content Include="Content\site.js" />
+    <Content Include="Content\css\site.css" />
+    <Content Include="Content\js\site.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
     <Content Include="Views\Meetings\Create.cshtml" />
@@ -126,11 +126,11 @@
     <Content Include="Views\Meetings\Details.cshtml" />
     <Content Include="Views\Meetings\Edit.cshtml" />
     <Content Include="Views\Meetings\Index.cshtml" />
+    <Content Include="Views\Agenda\_AgendaCreate.cshtml" />
+    <Content Include="Helpers\test.cshtml" />
+    <Content Include="Views\Agenda\EditorTemplates\Topic.cshtml" />
+    <Content Include="Views\Agenda\AddTopic.cshtml" />
     <Content Include="Views\Agenda\Create.cshtml" />
-    <Content Include="Views\Agenda\Delete.cshtml" />
-    <Content Include="Views\Agenda\Details.cshtml" />
-    <Content Include="Views\Agenda\Edit.cshtml" />
-    <Content Include="Views\Agenda\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -141,6 +141,8 @@
   <ItemGroup>
     <Compile Include="Controllers\AgendaController.cs" />
     <Compile Include="Controllers\MeetingsController.cs" />
+    <Compile Include="Helpers\HtmlHelperExtensions.cs" />
+    <Compile Include="Helpers\HtmlModelBindingHelperExtensions.cs" />
     <Compile Include="Models\AttachmentModel\Attachment.cs" />
     <Compile Include="Models\AttachmentModel\Comment.cs" />
     <Compile Include="Models\AttachmentModel\File.cs" />
@@ -149,6 +151,7 @@
     <Compile Include="Models\MeetingModel\Agenda.cs" />
     <Compile Include="Models\MeetingModel\Interfaces\IMeeting.cs" />
     <Compile Include="Models\MeetingModel\Meeting.cs" />
+    <Compile Include="Models\MeetingModel\SupTopic.cs" />
     <Compile Include="Models\MeetingModel\Topic.cs" />
     <Compile Include="Models\MeetingDbContext.cs" />
     <Compile Include="Models\PersonModel\Admin.cs" />

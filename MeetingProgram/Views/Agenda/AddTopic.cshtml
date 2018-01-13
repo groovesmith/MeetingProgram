@@ -1,0 +1,7 @@
+﻿@model MeetingProgram.Models.MeetingModel.Agenda
+@using MeetingProgram.Helpers
+@{
+    Layout = null;
+}
+
+@Html.EditorForMany(x => x.Topics, x => x.Index)

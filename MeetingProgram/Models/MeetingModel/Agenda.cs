@@ -10,18 +10,23 @@ namespace MeetingProgram.Models.MeetingModel
     public class Agenda
     {
         // singel topic and mulit topics 
-        public Agenda(List<Topic> topics)
-        {
-            Topics = topics;
-        }
         public Agenda()
         {
-
+            Topics = new List<Topic>();
         }
-        [Key]
-        [HiddenInput(DisplayValue = false)]
+
+
+        public Agenda(string topic)
+        {
+            Topics = new List<Topic>();
+            AddTopic(topic);
+        }
+
         public int AgendaID { get; set; }
-        public List<Topic> Topics { get; set; } = new List<Topic>();
+        public List<Topic> Topics { get; set; }
+
+
+        public void AddTopic(string topic) => Topics.Add(new Topic(topic));
 
         public void AddTopic(Topic topic)
             => Topics.Add(topic);

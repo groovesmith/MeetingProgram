@@ -1,0 +1,21 @@
+﻿.entry:not(:first-of-type) {
+    margin-top: 10px;
+}
+
+.glyphicon {
+    font-size: 12px;
+}
+
+#field {
+    margin-bottom: 20px;
+}
+
+.modal-content {
+    width: 600px !important;
+    margin: 30px auto !important;
+}
+
+.row .top-pad{
+    margin-top: 10px;
+    padding-top: 10px;
+}

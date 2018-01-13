@@ -13,116 +13,43 @@ namespace MeetingProgram.Controllers
 {
     public class AgendaController : Controller
     {
-        private MeetingDbContext db = new MeetingDbContext();
-
-        // GET: Agenda
-        public ActionResult Index()
+        [HttpGet]
+        public ActionResult Create()
         {
-            return View(db.Agenda.ToList());
+            return PartialView("_AgendaCreate");
         }
 
-        // GET: Agenda/Details/5
-        public ActionResult Details(int? id)
+        [HttpPost]
+        public ActionResult Create([Bind] Agenda agenda)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Agenda agenda = db.Agenda.Find(id);
-            if (agenda == null)
-            {
-                return HttpNotFound();
-            }
             return View(agenda);
         }
 
-        // GET: Agenda/Create
-        public ActionResult Create()
+        public ActionResult ViewCreateAgenda()
+        {
+            var agenda = new Agenda();
+            agenda.Topics.Add(new Topic());
+
+
+            return PartialView("_AgendaCreate", agenda);
+        }
+
+
+        [HttpPost]
+        public ActionResult CreateAgenda([Bind] Agenda agenda)
         {
             return View();
         }
 
-        // POST: Agenda/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AgendaID")] Agenda agenda)
+        [OutputCache(NoStore = true, Duration = 0, VaryByParam = "*")]
+        public ActionResult AddTopic()
         {
-            if (ModelState.IsValid)
-            {
-                db.Agenda.Add(agenda);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+            var agenda = new Agenda();
+            agenda.Topics.Add(new Topic());
 
             return View(agenda);
         }
 
-        // GET: Agenda/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Agenda agenda = db.Agenda.Find(id);
-            if (agenda == null)
-            {
-                return HttpNotFound();
-            }
-            return View(agenda);
-        }
 
-        // POST: Agenda/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AgendaID")] Agenda agenda)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(agenda).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(agenda);
-        }
-
-        // GET: Agenda/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Agenda agenda = db.Agenda.Find(id);
-            if (agenda == null)
-            {
-                return HttpNotFound();
-            }
-            return View(agenda);
-        }
-
-        // POST: Agenda/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Agenda agenda = db.Agenda.Find(id);
-            db.Agenda.Remove(agenda);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
     }
 }

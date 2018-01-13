@@ -16,5 +16,7 @@ namespace MeetingProgram.Models
         public DbSet<Person> Persons { get; set; }
 
         public System.Data.Entity.DbSet<MeetingProgram.Models.MeetingModel.Agenda> Agenda { get; set; }
+
+        public System.Data.Entity.DbSet<MeetingProgram.Models.MeetingModel.Topic> Topics { get; set; }
     }
 }

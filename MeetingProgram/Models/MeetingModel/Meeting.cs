@@ -21,27 +21,18 @@ namespace MeetingProgram.Models.MeetingModel
         }
         public Meeting()
         {
-
+            Agenda = new Agenda();
         }
 
         [Key]
         public int MeetingID { get; set; }
-        public virtual Agenda Agenda { get; set; }
+        public  Agenda Agenda { get; set; }
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime Date { get; set;  }
         public string Description { get; set; }
         public bool IsDraft { get; set; }
-        public List<Person> Atendees = new List<Person>();
+        public List<Person> Atendees { get; set; }
 
-        public void AddTopictoAgenda(string topic)
-        {
-            Agenda.AddTopic(new Topic(topic));
-        }
-
-        public void RemoveTopictoAgenda(Topic topic)
-        {
-            throw new NotImplementedException();
-        }
 
         public void AddAtendee(Person atendee)
         {

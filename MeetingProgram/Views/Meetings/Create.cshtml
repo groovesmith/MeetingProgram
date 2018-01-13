@@ -16,6 +16,8 @@
         <h4>Meeting</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
         @* Date *@
         <div class="form-group">
             <div class="col-md-10">
@@ -25,8 +27,8 @@
                         <div class="input-group-addon">
                             <i class="fa fa-calendar"></i>
                         </div>
-                        @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control pull-right datepicker" } })
-
+                        @Html.EditorFor(model => model.Date, "{0:dd/MM/yyyy}", new { htmlAttributes = new
+                            { @class = "form-control pull-right datepicker" } })
                     </div>
                     <div class="col-xs-12 col-md-6">
                         @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
@@ -35,7 +37,7 @@
             </div>
         </div>
 
-
+        @* description *@
         <div class="form-group">
             @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -44,14 +46,14 @@
             </div>
         </div>
 
+        @*agenda*@
         <div class="form-group">
             @Html.LabelFor(model => model.Agenda, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <button type="button" class="btn btn-success">
-                    Add Agenda
-                </button>
-                <a class="btn btn-default" data-toggle="modal" href="@Url.Action("Create","Agenda")"><span class="glyphicon glyphicon-plus"></span>&nbsp;CreateModal</a>
-                @Html.EditorFor(model => model.Agenda, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ActionLink("CreateAgenda", "ViewCreateAgenda", "Agenda", null, new { @class = "modal-link btn btn-success" })   
+            
+
+
 
             </div>
         </div>
@@ -67,19 +69,22 @@
             </div>
         </div>
 
+        @* atendes *@
         <div class="form-group">
             @Html.LabelFor(model => model.Atendees, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <select class="selectpicker form-control" multiple>
                     <option value="jonas">Jonas</option>
-                    <option value="name">Tomatoes</option>
-                    <option value="mozarella">Mozzarella</option>
-                    <option value="mushrooms">Mushrooms</option>
-                    <option value="pepperoni">Pepperoni</option>
-                    <option value="onions">Onions</option>
+                    <option value="thomas">Thomas</option>
+                    <option value="jack">Jack</option>
+                    <option value="emma">Emma</option>
+                    <option value="sofia">Sofia</option>
                 </select>
             </div>
         </div>
+        
+        
+        
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
@@ -94,6 +99,5 @@
 
 @section ViewSpecificJavascript {
     @Scripts.Render("~/bundles/jqueryval")
-    @Scripts.Render("~/Content/site.js")
-
+    @Scripts.Render("~/Content/js/site.js")
 }
