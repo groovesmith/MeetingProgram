@@ -1,4 +1,5 @@
 ﻿@using System.Web.Optimization
+@using MeetingProgram.Models.MeetingModel
 @model MeetingProgram.Models.MeetingModel.Meeting
 
 @{
@@ -43,6 +44,18 @@
                 </div>
             </div>
         </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(model => model.Agenda, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <ul id="topicEditor" style="list-style-type: none">
+                    @foreach (Topic topic in Model.Agenda.Topics) {
+                        Html.RenderPartial("TopicEditor", topic);
+                    }
+                </ul>
+                <p><a id="addAnother" href="#">Add another</a>
+            </div>
+        </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
@@ -57,6 +70,14 @@
 </div>
 
 @section ViewSpecificJavascript {
+    <script>
+        $("#addAnother").click(function () {
+            $.get('/Meetings/TopicRow', function (template) {
+                $("#topicEditor").append(template);
+            });
+        });
+    </script>
+
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/Content/js/site.js")
 }

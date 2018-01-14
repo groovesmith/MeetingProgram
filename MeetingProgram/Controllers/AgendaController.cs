@@ -13,6 +13,8 @@ namespace MeetingProgram.Controllers
 {
     public class AgendaController : Controller
     {
+        private MeetingDbContext context = new MeetingDbContext();
+
         [HttpGet]
         public ActionResult Create()
         {
@@ -22,6 +24,9 @@ namespace MeetingProgram.Controllers
         [HttpPost]
         public ActionResult Create([Bind] Agenda agenda)
         {
+            context.Agenda.Add(agenda);
+            context.SaveChanges();
+
             return View(agenda);
         }
 

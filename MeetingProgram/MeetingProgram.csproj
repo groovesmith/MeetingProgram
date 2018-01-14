@@ -131,6 +131,7 @@
     <Content Include="Views\Agenda\EditorTemplates\Topic.cshtml" />
     <Content Include="Views\Agenda\AddTopic.cshtml" />
     <Content Include="Views\Agenda\Create.cshtml" />
+    <Content Include="Views\Meetings\TopicEditor.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

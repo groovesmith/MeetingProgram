@@ -1,0 +1,12 @@
+﻿@using MeetingProgram.Helpers
+@model MeetingProgram.Models.MeetingModel.Topic
+
+<li style="padding-bottom:15px">
+    @using (Html.BeginCollectionItem("Topics")) {
+        @Html.LabelFor(model => model.Subject)
+        @Html.EditorFor(model => model.Subject)
+        @Html.ValidationMessageFor(model => model.Subject)
+
+        <a href="#" onclick="$(this).parent().remove();">Delete</a>
+    }
+</li>

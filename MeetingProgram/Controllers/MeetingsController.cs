@@ -53,7 +53,7 @@ namespace MeetingProgram.Controllers
             {
                 db.Meetings.Add(meeting);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Edit", new { id = meeting.MeetingID });
             }
 
             return View(meeting);
@@ -134,7 +134,10 @@ namespace MeetingProgram.Controllers
         //{
         //    return RedirectToAction("Create");
         //}
-
+        public ActionResult TopicRow()
+        {
+            return PartialView("TopicEditor");
+        }
 
 
     }
