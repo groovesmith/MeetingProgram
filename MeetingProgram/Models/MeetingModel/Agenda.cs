@@ -12,7 +12,6 @@ namespace MeetingProgram.Models.MeetingModel
         // singel topic and mulit topics 
         public Agenda()
         {
-            Topics = new List<Topic>();
         }
 
 
@@ -23,7 +22,7 @@ namespace MeetingProgram.Models.MeetingModel
         }
 
         public int AgendaID { get; set; }
-        public List<Topic> Topics { get; set; }
+        public virtual List<Topic> Topics { get; set; }
 
 
         public void AddTopic(string topic) => Topics.Add(new Topic(topic));

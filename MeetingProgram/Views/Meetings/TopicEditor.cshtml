@@ -2,7 +2,7 @@
 @model MeetingProgram.Models.MeetingModel.Topic
 
 <li style="padding-bottom:15px">
-    @using (Html.BeginCollectionItem("Topics")) {
+    @using (Html.BeginCollectionItem("Agenda.Topics")) {
         @Html.LabelFor(model => model.Subject)
         @Html.EditorFor(model => model.Subject)
         @Html.ValidationMessageFor(model => model.Subject)

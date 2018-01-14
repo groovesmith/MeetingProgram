@@ -47,10 +47,12 @@ namespace MeetingProgram.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MeetingID,Date,Description,IsDraft")] Meeting meeting)
+        public ActionResult Create([Bind(Include = "MeetingID,Date,Description,Agenda,IsDraft")] Meeting meeting)
         {
             if (ModelState.IsValid)
             {
+                meeting.Agenda = new Agenda();
+                meeting.Agenda.Topics = new List<Topic>();
                 db.Meetings.Add(meeting);
                 db.SaveChanges();
                 return RedirectToAction("Edit", new { id = meeting.MeetingID });
@@ -81,9 +83,14 @@ namespace MeetingProgram.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "MeetingID,Date,Description,Agenda,IsDraft")] Meeting meeting)
         {
-            if (ModelState.IsValid)
-            {
-                db.Entry(meeting).State = EntityState.Modified;
+            if (ModelState.IsValid) {
+                Meeting m = db.Meetings.Find(meeting.MeetingID);
+                m.Agenda.Topics.Clear();
+                
+                foreach (Topic t in meeting.Agenda.Topics) {
+                    m.Agenda.Topics.Add(t);
+                }
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
