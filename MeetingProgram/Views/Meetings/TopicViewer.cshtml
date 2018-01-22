@@ -1,0 +1,10 @@
+﻿@using MeetingProgram.Helpers
+@model MeetingProgram.Models.MeetingModel.Topic
+
+<li style="padding-bottom:15px">
+    @using (Html.BeginCollectionItem("Agenda.Topics"))
+    {
+        @Html.DisplayFor(model => model.Subject)
+    }
+</li>
+

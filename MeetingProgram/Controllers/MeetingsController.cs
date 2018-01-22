@@ -55,7 +55,7 @@ namespace MeetingProgram.Controllers
                 meeting.Agenda.Topics = new List<Topic>();
                 db.Meetings.Add(meeting);
                 db.SaveChanges();
-                return RedirectToAction("Edit", new { id = meeting.MeetingID });
+                return RedirectToAction("Index");
             }
 
             return View(meeting);
@@ -86,11 +86,11 @@ namespace MeetingProgram.Controllers
             if (ModelState.IsValid) {
                 Meeting m = db.Meetings.Find(meeting.MeetingID);
                 m.Agenda.Topics.Clear();
-                
+               
                 foreach (Topic t in meeting.Agenda.Topics) {
                     m.Agenda.Topics.Add(t);
                 }
-
+                db.Meetings.Add(meeting);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

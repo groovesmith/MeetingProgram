@@ -42,14 +42,18 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+            <div class="col-xs-12 col-md-6">
+                @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control col-md-2" } })
+                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="form-group">
+    @*<div class="form-group">
         @Html.LabelFor(model => model.IsDraft, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             <div class="checkbox">
@@ -57,17 +61,17 @@
                 @Html.ValidationMessageFor(model => model.IsDraft, "", new { @class = "text-danger" })
             </div>
         </div>
-    </div>
+    </div>*@
 
     <div class="form-group">
         @Html.LabelFor(model => model.Agenda, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            <ul id="topicEditor" style="list-style-type: none">
+            <ol id="topicEditor" style="list-style-type: none">
                 @foreach (Topic topic in Model.Agenda.Topics)
                 {
                     Html.RenderPartial("TopicEditor", topic);
                 }
-            </ul>
+            </ol>
             <p><a id="addAnother" href="#">Add another</a>
         </div>
     </div>
