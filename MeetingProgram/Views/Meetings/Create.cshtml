@@ -27,7 +27,7 @@
                         <div class="input-group-addon">
                             <i class="fa fa-calendar"></i>
                         </div>
-                        @Html.EditorFor(model => model.Date, "{0:dd/MM/yyyy}", new { htmlAttributes = new
+                        @Html.EditorFor(model => model.Date, new { htmlAttributes = new
                             { @class = "form-control pull-right datepicker" } })
                     </div>
                     <div class="col-xs-12 col-md-6">
@@ -66,20 +66,6 @@
                     @Html.EditorFor(model => model.IsDraft)
                     @Html.ValidationMessageFor(model => model.IsDraft, "", new { @class = "text-danger" })
                 </div>
-            </div>
-        </div>
-
-        @* atendes *@
-        <div class="form-group">
-            @Html.LabelFor(model => model.Atendees, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <select class="selectpicker form-control" multiple>
-                    <option value="jonas">Jonas</option>
-                    <option value="thomas">Thomas</option>
-                    <option value="jack">Jack</option>
-                    <option value="emma">Emma</option>
-                    <option value="sofia">Sofia</option>
-                </select>
             </div>
         </div>
         
