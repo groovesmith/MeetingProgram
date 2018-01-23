@@ -1,11 +1,8 @@
-﻿@using MeetingProgram.Models.MeetingModel;
-@model IEnumerable<MeetingProgram.Models.MeetingModel.Meeting>
+﻿@model IEnumerable<MeetingProgram.Models.MeetingModel.Meeting>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Meeting";
 }
-
-<h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -18,12 +15,7 @@
         <th>
             @Html.DisplayNameFor(model => model.Description)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Agenda)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Atendees)
-        </th>
+
         <th></th>
     </tr>
 
@@ -35,15 +27,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.Description)
         </td>
-        <td>        
-            <ol>
-                @foreach (Topic topic in item.Agenda.Topics)
-                {
-                    Html.RenderPartial("TopicViewer", topic);
-                }
-            </ol>
-                
-        </td>
+
         <td></td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.MeetingID }) |

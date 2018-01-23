@@ -130,7 +130,6 @@
     <Content Include="Helpers\test.cshtml" />
     <Content Include="Views\Agenda\EditorTemplates\Topic.cshtml" />
     <Content Include="Views\Agenda\AddTopic.cshtml" />
-    <Content Include="Views\Agenda\Create.cshtml" />
     <Content Include="Views\Meetings\TopicEditor.cshtml" />
     <Content Include="Views\Meetings\TopicViewer.cshtml" />
     <None Include="Web.Debug.config">

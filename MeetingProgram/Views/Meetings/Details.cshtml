@@ -1,4 +1,5 @@
-﻿@model MeetingProgram.Models.MeetingModel.Meeting
+﻿@using MeetingProgram.Models.MeetingModel;
+@model MeetingProgram.Models.MeetingModel.Meeting
 
 @{
     ViewBag.Title = "Details";
@@ -27,11 +28,16 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.IsDraft)
+            @Html.DisplayNameFor(model => model.Agenda)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.IsDraft)
+            <ol>
+                @foreach (Topic topic in Model.Agenda.Topics)
+                {
+                    Html.RenderPartial("TopicViewer", topic);
+                }
+            </ol>
         </dd>
 
     </dl>

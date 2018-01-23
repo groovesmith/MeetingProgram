@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -69,6 +70,8 @@ namespace MeetingProgram.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Meeting meeting = db.Meetings.Find(id);
+
+
             if (meeting == null)
             {
                 return HttpNotFound();
@@ -76,26 +79,26 @@ namespace MeetingProgram.Controllers
             return View(meeting);
         }
 
-        // POST: Meetings/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "MeetingID,Date,Description,Agenda,IsDraft")] Meeting meeting)
         {
-            if (ModelState.IsValid) {
+            if (ModelState.IsValid)
+            {
                 Meeting m = db.Meetings.Find(meeting.MeetingID);
                 m.Agenda.Topics.Clear();
-               
-                foreach (Topic t in meeting.Agenda.Topics) {
+                foreach (Topic t in meeting.Agenda.Topics)
+                {
                     m.Agenda.Topics.Add(t);
                 }
-                db.Meetings.Add(meeting);
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(meeting);
         }
+
 
         // GET: Meetings/Delete/5
         public ActionResult Delete(int? id)
@@ -131,6 +134,7 @@ namespace MeetingProgram.Controllers
             }
             base.Dispose(disposing);
         }
+
         //public ActionResult ViewCreateAgenda()
         //{
         //    return PartialView("_AgendaCreate");
@@ -145,6 +149,16 @@ namespace MeetingProgram.Controllers
         {
             return PartialView("TopicEditor");
         }
+
+
+        //private void PopulateTopicsList()
+        //{
+        //    var topicsQuery = from d in db.Topics
+        //                           orderby d.Index
+        //                           select d;
+        //    ViewBag.TopicID = new SelectList(topicsQuery);
+        //}
+
 
 
     }

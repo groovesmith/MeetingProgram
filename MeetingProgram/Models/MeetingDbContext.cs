@@ -2,7 +2,7 @@
 using MeetingProgram.Models.MeetingModel;
 using MeetingProgram.Models.PersonModel;
 using MeetingProgram.Models.ProjectModel;
-using MeetingProgram.Models.Attachment;
+using MeetingProgram.Models.AttachmentModel;
 
 namespace MeetingProgram.Models
 {
@@ -11,12 +11,11 @@ namespace MeetingProgram.Models
         public MeetingDbContext() : base() { }
 
         public DbSet<Meeting> Meetings { get; set; }
-        public DbSet<Attachment.Attachment> Attachments { get; set; }
+        public DbSet<Agenda> Agenda { get; set; }
+        public DbSet<Topic> Topics { get; set; }
         public DbSet<Project> Projects { get; set; }
         public DbSet<Person> Persons { get; set; }
-
-        public System.Data.Entity.DbSet<MeetingProgram.Models.MeetingModel.Agenda> Agenda { get; set; }
-
-        public System.Data.Entity.DbSet<MeetingProgram.Models.MeetingModel.Topic> Topics { get; set; }
+        public DbSet<Attachment> Attachments { get; set; }
+        
     }
 }

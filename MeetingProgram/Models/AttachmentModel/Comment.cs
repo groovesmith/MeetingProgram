@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MeetingProgram.Models.Attachment
+namespace MeetingProgram.Models.AttachmentModel
 {
     public class Comment : Attachment
     {

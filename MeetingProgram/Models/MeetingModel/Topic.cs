@@ -10,40 +10,25 @@ namespace MeetingProgram.Models.MeetingModel
     {
         public Topic()
         {
-           // SupTopics = new List<SupTopic>();
+
         }
 
-
-
-
-        // singel topic and mulit topics 
         public Topic(string subject)
         {
             Subject = subject;
-           // SupTopics = new List<SupTopic>();
+
 
         }
     
         public int TopicID { get; set; }
         public string Subject { get; set; }
         public string Index { get; set; }
-       // public List<SupTopic> SupTopics { get; set; }
-
-        //public void AddSubTopictoSubject(Topic topic)
-        //{
-        //    SupTopics.Add(topic);
-        //}
-
-        //public void RemoveSubTopictoSubject(Topic topic)
-        //{
-        //    SupTopics.Remove(topic);
-           
-        //}
+        // public ICollection<SupTopic> SupTopics { get; set; }
 
 
     }
 
-    
+
 
 
 }
