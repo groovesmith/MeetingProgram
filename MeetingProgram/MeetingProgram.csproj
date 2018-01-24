@@ -132,6 +132,11 @@
     <Content Include="Views\Agenda\AddTopic.cshtml" />
     <Content Include="Views\Meetings\TopicEditor.cshtml" />
     <Content Include="Views\Meetings\TopicViewer.cshtml" />
+    <Content Include="Views\Users\Create.cshtml" />
+    <Content Include="Views\Users\Delete.cshtml" />
+    <Content Include="Views\Users\Details.cshtml" />
+    <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -142,6 +147,7 @@
   <ItemGroup>
     <Compile Include="Controllers\AgendaController.cs" />
     <Compile Include="Controllers\MeetingsController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Helpers\HtmlHelperExtensions.cs" />
     <Compile Include="Helpers\HtmlModelBindingHelperExtensions.cs" />
     <Compile Include="Models\AttachmentModel\Attachment.cs" />

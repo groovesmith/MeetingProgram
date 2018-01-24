@@ -92,6 +92,8 @@ namespace MeetingProgram.Controllers
                 {
                     m.Agenda.Topics.Add(t);
                 }
+                m.Date = meeting.Date;
+                m.Description = meeting.Description;
 
                 db.SaveChanges();
                 return RedirectToAction("Index");

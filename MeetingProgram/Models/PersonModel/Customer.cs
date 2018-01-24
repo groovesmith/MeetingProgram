@@ -8,6 +8,10 @@ namespace MeetingProgram.Models.PersonModel
 {
     public class Customer : Person 
     {
+        private Customer()
+        {
+            
+        }
         public Customer(int personID, string firstname, string lastname, string email, int phoneNr, int customerID, int cvr, string address) : base(personID, firstname, lastname, email, phoneNr)
         {
             PersonID = personID;

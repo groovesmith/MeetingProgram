@@ -11,6 +11,10 @@ namespace MeetingProgram.Models.PersonModel
 
     public class User : Person, IUser
     {
+        public User()
+        {
+            
+        }
         public User(int personID, string firstname, string lastname, string email, int phoneNr, string userName, string passWord) : base(personID, firstname, lastname, email, phoneNr)
         {
             

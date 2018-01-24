@@ -20,7 +20,7 @@ namespace MeetingProgram
 
         protected void Application_Error(object sender, EventArgs e)
         {
-            var exception = Server.GetLastError();
+            /*var exception = Server.GetLastError();
             var httpContext = ((HttpApplication)sender).Context;
             httpContext.Response.Clear();
             httpContext.ClearError();
@@ -30,7 +30,7 @@ namespace MeetingProgram
                 return;
             }
 
-            ExecuteErrorController(httpContext, exception as HttpException);
+            ExecuteErrorController(httpContext, exception as HttpException);*/
         }
 
         private void ExecuteErrorController(HttpContext httpContext, HttpException exception)

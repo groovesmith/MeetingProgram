@@ -11,6 +11,10 @@ namespace MeetingProgram.Models.PersonModel
 {
     public class Admin : User, IAdmin
     {
+        private Admin()
+        {
+            
+        }
         public Admin(int personID, string firstname, string lastname, string email, int phoneNr, string userName, string passWord) : base(personID, firstname, lastname, email, phoneNr, userName, passWord)
         {
             PersonID = personID;

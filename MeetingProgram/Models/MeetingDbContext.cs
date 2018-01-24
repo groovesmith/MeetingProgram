@@ -16,6 +16,7 @@ namespace MeetingProgram.Models
         public DbSet<Project> Projects { get; set; }
         public DbSet<Person> Persons { get; set; }
         public DbSet<Attachment> Attachments { get; set; }
-        
+
+        public System.Data.Entity.DbSet<MeetingProgram.Models.PersonModel.User> Users { get; set; }
     }
 }

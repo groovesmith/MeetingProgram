@@ -7,10 +7,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MeetingProgram.Models.PersonModel
 {
-    public class Person
+    public abstract class Person
     {
-
-        public Person(int personID, string firstname, string lastname, string email, int phoneNr )
+        protected Person() { }
+        protected Person(int personID, string firstname, string lastname, string email, int phoneNr )
         {
             PersonID = personID;
             FirstName = firstname;
