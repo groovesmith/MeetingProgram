@@ -1,4 +1,5 @@
-﻿using MeetingProgram.Models.Attachment;
+﻿using MeetingProgram.Models.AttachmentModel;
+using MeetingProgram.Models.PersonModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,8 +9,8 @@ namespace MeetingProgram.Models.MeetingModel.Interfaces
 {
     interface IMeeting
     {
-        void AddAtendee(PersonModel.Person atendee);
-        void RemoveAtendee(PersonModel.Person atendee);
+        void AddAtendee(Person atendee);
+        void RemoveAtendee(Person atendee);
         void ChangeAtendeeRole();
         SoundFile RecordSound();
         

@@ -54,47 +54,68 @@
     </div>
 
     @*<div class="form-group">
-        @Html.LabelFor(model => model.IsDraft, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            <div class="checkbox">
-                @Html.EditorFor(model => model.IsDraft)
-                @Html.ValidationMessageFor(model => model.IsDraft, "", new { @class = "text-danger" })
+            @Html.LabelFor(model => model.IsDraft, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.IsDraft)
+                    @Html.ValidationMessageFor(model => model.IsDraft, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
-    </div>*@
+        </div>*@
 
     <div class="form-group">
-        @Html.LabelFor(model => model.Agenda, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            <ol id="topicEditor" style="list-style-type: none">
-                @foreach (Topic topic in Model.Agenda.Topics)
-                {
-                    Html.RenderPartial("TopicEditor", topic);
-                }
-            </ol>
-            <p><a id="addAnother" href="#">Add another</a>
+            <div class="col-xs-12 col-md-6">
+                @Html.LabelFor(model => model.Agenda, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <ol id="topicEditor" style="list-style-type: none">
+                        @foreach (Topic topic in Model.Agenda.Topics)
+                        {
+                            Html.RenderPartial("TopicEditor", topic);
+                        }
+                    </ol>
+                    <p><a id="addAnother" href="#">Add another</a>
+                </div>
+            </div>
         </div>
     </div>
+
 
     @* atendes *@
     <div class="form-group">
-        @Html.LabelFor(model => model.Atendees, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            <select class="selectpicker form-control" multiple>
-                <option value="jonas">Jonas</option>
-                <option value="thomas">Thomas</option>
-                <option value="jack">Jack</option>
-                <option value="emma">Emma</option>
-                <option value="sofia">Sofia</option>
-            </select>
+            <div class="col-xs-12 col-md-6">
+                @Html.LabelFor(model => model.Atendees, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @*@Html.DropDownListFor(model => model.Atendees, new SelectList(Model.Atendees, "", ""), " ", new { @class = "form-control selectpicker  col-md-2" })
+                        @Html.ValidationMessageFor(model => model.Atendees, "", new { @class = "text-danger" })
+                    *@
+
+                    <select class="selectpicker select2-selection--multiple form-control" name="states[]" multiple="multiple">
+                        <option value="jonas">Jonas</option>
+                        <option value="thomas">Thomas</option>
+                        <option value="jack">Jack</option>
+                        <option value="emma">Emma</option>
+                        <option value="sofia">Sofia</option>
+                    </select>
+
+                </div>
+            </div>
         </div>
     </div>
 
+
     <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Save" class="btn btn-default" />
+        <div class="col-md-10">
+            <div class="col-xs-12 col-md-6">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save Meeting" class="btn btn-default" />
+                </div>
+            </div>
         </div>
     </div>
+
+
 </div>
 }
 
