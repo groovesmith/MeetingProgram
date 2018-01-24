@@ -90,14 +90,17 @@
                     @*@Html.DropDownListFor(model => model.Atendees, new SelectList(Model.Atendees, "", ""), " ", new { @class = "form-control selectpicker  col-md-2" })
                         @Html.ValidationMessageFor(model => model.Atendees, "", new { @class = "text-danger" })
                     *@
+                    
+                    @Html.DropDownList("Atendees.PersonID", new MultiSelectList(ViewBag.People, "Value", "Text", new int[] {}))
 
-                    <select class="selectpicker select2-selection--multiple form-control" name="states[]" multiple="multiple">
+
+                    <!--<select class="selectpicker select2-selection--multiple form-control" name="states[]" multiple="multiple">
                         <option value="jonas">Jonas</option>
                         <option value="thomas">Thomas</option>
                         <option value="jack">Jack</option>
                         <option value="emma">Emma</option>
                         <option value="sofia">Sofia</option>
-                    </select>
+                    </select>-->
 
                 </div>
             </div>

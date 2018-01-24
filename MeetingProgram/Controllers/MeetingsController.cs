@@ -9,6 +9,7 @@ using System.Web;
 using System.Web.Mvc;
 using MeetingProgram.Models;
 using MeetingProgram.Models.MeetingModel;
+using MeetingProgram.Models.PersonModel;
 
 namespace MeetingProgram.Controllers
 {
@@ -54,6 +55,7 @@ namespace MeetingProgram.Controllers
             {
                 meeting.Agenda = new Agenda();
                 meeting.Agenda.Topics = new List<Topic>();
+                meeting.Atendees = new List<Person>();
                 db.Meetings.Add(meeting);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -76,13 +78,16 @@ namespace MeetingProgram.Controllers
             {
                 return HttpNotFound();
             }
+
+
+            ViewBag.People = db.Users.Select(x => new SelectListItem { Value = x.PersonID.ToString(), Text = x.UserName });
             return View(meeting);
         }
 
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MeetingID,Date,Description,Agenda,IsDraft")] Meeting meeting)
+        public ActionResult Edit([Bind(Include = "MeetingID,Date,Description,Agenda,IsDraft,Atendees.PersonID")] Meeting meeting)
         {
             if (ModelState.IsValid)
             {
@@ -98,6 +103,7 @@ namespace MeetingProgram.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.People = db.Users.Select(x => new SelectListItem { Value = x.PersonID.ToString(), Text = x.UserName });
             return View(meeting);
         }
 

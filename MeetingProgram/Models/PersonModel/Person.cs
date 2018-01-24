@@ -23,18 +23,20 @@ namespace MeetingProgram.Models.PersonModel
         [Key]
         public int PersonID { get; protected set; }
         public string FirstName { get; set; }
-        public string LastName  { get; set; }    
-        
+        public string LastName  { get; set; }
+
+        private string _email;
+
         public string Email
         {
-            get { return Email; }
+            get { return _email; }
             set
             {
                 Regex reg = new Regex(@"^[\w.-]+@[\w.-]+\.[\w-]+$");
                 // checks if the mail is valid
                 if (reg.Match(value).Success)
                 {
-                    Email = value;
+                    _email = value;
                 }
                 else
                 {

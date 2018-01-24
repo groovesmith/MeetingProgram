@@ -19,7 +19,7 @@ namespace MeetingProgram.Models.MeetingModel
         public DateTime Date { get; set;  }
         public string Description { get; set; }
         public bool IsDraft { get; set; }
-        public ICollection<Person> Atendees { get; set; }
+        public virtual List<Person> Atendees { get; set; }
 
     }
 }
