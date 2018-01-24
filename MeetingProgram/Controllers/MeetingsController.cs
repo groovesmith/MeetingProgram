@@ -103,7 +103,7 @@ namespace MeetingProgram.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.People = db.Users.Select(x => new SelectListItem { Value = x.PersonID.ToString(), Text = x.UserName });
+            ViewBag.People = db.Users.Select(x => new SelectListItem { Value = x.PersonID.ToString(), Text = x.FirstName });
             return View(meeting);
         }
 

@@ -155,6 +155,7 @@
     <Compile Include="Models\AttachmentModel\File.cs" />
     <Compile Include="Models\AttachmentModel\SoundFile.cs" />
     <Compile Include="Models\AttachmentModel\TextFile.cs" />
+    <Compile Include="Models\MeetingDbInitializer.cs" />
     <Compile Include="Models\MeetingModel\Agenda.cs" />
     <Compile Include="Models\MeetingModel\Interfaces\IMeeting.cs" />
     <Compile Include="Models\MeetingModel\Meeting.cs" />
@@ -301,6 +302,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\images\" />
+    <Folder Include="Models\ViewModels\" />
     <Folder Include="Scripts\" />
   </ItemGroup>
   <PropertyGroup>

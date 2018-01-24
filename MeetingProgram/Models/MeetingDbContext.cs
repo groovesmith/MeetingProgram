@@ -8,7 +8,10 @@ namespace MeetingProgram.Models
 {
     public class MeetingDbContext : DbContext
     {
-        public MeetingDbContext() : base() { }
+        public MeetingDbContext() : base("MeetingDbConnectionString")
+        {
+            Database.SetInitializer(new  MeetingDbInitializer());
+        }
 
         public DbSet<Meeting> Meetings { get; set; }
         public DbSet<Agenda> Agenda { get; set; }

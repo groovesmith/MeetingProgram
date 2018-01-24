@@ -47,5 +47,7 @@ namespace MeetingProgram.Models.PersonModel
 
         public int PhoneNr      { get; set; }
 
+        public string FullName => $"{FirstName} {LastName}";
+
     }
 }
