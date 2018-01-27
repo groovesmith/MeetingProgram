@@ -79,7 +79,6 @@ namespace MeetingProgram.Controllers
                 return HttpNotFound();
             }
 
-
             ViewBag.People = db.Users.Select(x => new SelectListItem { Value = x.PersonID.ToString(), Text = x.UserName });
             return View(meeting);
         }
