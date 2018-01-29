@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2010
+VisualStudioVersion = 15.0.27004.2008
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeetingProgram", "MeetingProgram\MeetingProgram.csproj", "{A9516CA8-E712-4175-84EF-E8D2900916CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestMeetingProgram", "UnitTestMeetingProgram\UnitTestMeetingProgram.csproj", "{127B7BCB-C164-4B1D-9B10-2C570A941613}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{A9516CA8-E712-4175-84EF-E8D2900916CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9516CA8-E712-4175-84EF-E8D2900916CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9516CA8-E712-4175-84EF-E8D2900916CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{127B7BCB-C164-4B1D-9B10-2C570A941613}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{127B7BCB-C164-4B1D-9B10-2C570A941613}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{127B7BCB-C164-4B1D-9B10-2C570A941613}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{127B7BCB-C164-4B1D-9B10-2C570A941613}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
